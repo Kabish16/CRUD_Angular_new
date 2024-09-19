@@ -1,0 +1,20 @@
+<p>add-user works!</p>
+<form [formGroup]="addUserForm"(ngSubmit)="onSubmit()"> 
+    <div>
+        <label for="name">Name</label>
+        <input id="name" formControlName="name"/>
+        <div *ngIf="addUserForm.get('name')?.invalid && addUserForm.get('name')?.touched">
+        </div>
+    </div>    
+
+    <div>
+        <label for="email">Email</label>
+        <input id="email" formControlName="email"/>
+        <div *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched">
+            <span *ngif="addUserForm.get('email').errors?.['required']">Email is required.</span>
+            <span *ngif="addUserForm.get('email').errors?.['email']">Email Format is invalid,Try again.</span>
+        </div>    
+    </div>    
+
+    <button type="submit"[disabled]="addUserForm.invalid">Add-User</button>
+</form>

@@ -1,0 +1,19 @@
+<h2>edit-user works!</h2>
+<form [formGroup]="editUserForm"(ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" formControlName="name"/>
+        <div *ngIf="editUserForm.get('name')?.invalid && editUserForm.get('name')?.touched">            
+        </div>
+    </div>    
+
+    <div>
+        <label for="email">Email</label>
+        <input id="email" formControlName="email"/>
+        <div *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched"> 
+            <span *ngIf="editUserForm.get('email')?.errors?.['required']"> Email is required.</span>
+            <span *ngIf="editUserForm.get('email')?.errors?.['email']"> Email is Invalid, Try Again.</span>           
+        </div>
+    </div>    
+<button type="submit"[disabled]='editUserForm.invalid'> Edit Changes</button>
+</form>
