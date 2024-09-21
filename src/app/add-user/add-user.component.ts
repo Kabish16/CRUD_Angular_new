@@ -22,7 +22,8 @@ constructor(
 ){
   this.addUserForm = this.formBuilder.group({
     name:['',[Validators.required]],
-    email:['',[Validators.required,Validators.email]]
+    email:['',[Validators.required,Validators.email]],
+    password:['',[Validators.required]]
   });
 }
 

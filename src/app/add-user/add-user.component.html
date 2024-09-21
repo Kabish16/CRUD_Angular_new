@@ -1,4 +1,4 @@
-<p>add-user works!</p>
+<h2>ADD USER</h2>
 <form [formGroup]="addUserForm"(ngSubmit)="onSubmit()"> 
     <div>
         <label for="name">Name</label>
@@ -16,5 +16,13 @@
         </div>    
     </div>    
 
-    <button type="submit"[disabled]="addUserForm.invalid">Add-User</button>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" formControlName="password"/>
+        <div *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched">
+          
+        </div>
+    </div>   
+
+    <button type="submit"[disabled]="addUserForm.invalid">ADD USER</button>
 </form>

@@ -37,3 +37,24 @@ tr:hover {
 td, th {
     padding: 10px 20px;
 }
+
+#A{
+    color:white;
+    background-color: red;
+    cursor:pointer;
+    border-color: red;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+}
+
+#B{
+    color: white;
+    background-color: rgb(68, 180, 68);
+    cursor: pointer;
+    border-color:rgb(68, 180, 68);
+    border-radius: 8px;
+    border:none;
+    padding: 8px 16px;
+}

@@ -1,4 +1,4 @@
-<h2>edit-user works!</h2>
+<h2>Edit-User</h2>
 <form [formGroup]="editUserForm"(ngSubmit)="onSubmit()">
     <div>
         <label for="name">Name</label>
@@ -15,5 +15,5 @@
             <span *ngIf="editUserForm.get('email')?.errors?.['email']"> Email is Invalid, Try Again.</span>           
         </div>
     </div>    
-<button type="submit"[disabled]='editUserForm.invalid'> Edit Changes</button>
+<button type="submit"[disabled]='editUserForm.invalid'> Confirm Edit</button>
 </form>

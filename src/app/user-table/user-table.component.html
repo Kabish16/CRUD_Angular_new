@@ -1,4 +1,3 @@
-<p>user-table works!</p>
 <table *ngIf="tableVisible"> 
     <thead>
         <tr>
@@ -13,9 +12,9 @@
         <td>{{ user.id}}</td>
         <td>{{ user.name}}</td>
         <td>{{ user.email}}</td>
-        <td> 
-            <button (click)="deleteUser(user.id)"> Delete</button>
-             <button [routerLink]="['/edit', user.id]">Edit</button> 
+        <td>   
+            <button id="B"[routerLink]="['/edit', user.id]">Edit</button> 
+            <button id="A"(click)="deleteUser(user.id)"> Delete</button>
         </td>     
        </tr>
     </tbody>    
