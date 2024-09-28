@@ -2,13 +2,16 @@ import { Component , OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-user-table',
   standalone: true,
-  imports: [RouterModule , CommonModule],
+  imports: [RouterModule , CommonModule,InputTextModule,ButtonModule,TableModule],
   templateUrl: './user-table.component.html',
-  styleUrl: './user-table.component.css'
+  styleUrls: ['./user-table.component.css']
 })
 
 export class UserTableComponent implements OnInit {

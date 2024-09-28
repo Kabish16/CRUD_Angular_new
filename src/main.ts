@@ -12,7 +12,8 @@ const routes:Routes =[
   {path:'user-list',component:UserTableComponent},
   {path:'add', component: AddUserComponent},
   {path:'edit/:id', component: EditUserComponent},
-  {path:'',redirectTo:'/user-list', pathMatch:'full'}
+  {path:'',redirectTo:'/user-list', pathMatch:'full'},
+  {path:'**', redirectTo:'/user-list'}
 
 ]
 

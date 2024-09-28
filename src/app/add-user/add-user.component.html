@@ -1,28 +1,27 @@
-<h2>ADD USER</h2>
-<form [formGroup]="addUserForm"(ngSubmit)="onSubmit()"> 
-    <div>
+<h2 class="text-center">ADD USER</h2>
+<form [formGroup]="addUserForm" (ngSubmit)="onSubmit()" class="p-fluid p-mx-auto" style="max-width: 300px;">
+    <div class="p-field">
         <label for="name">Name</label>
-        <input id="name" formControlName="name"/>
-        <div *ngIf="addUserForm.get('name')?.invalid && addUserForm.get('name')?.touched">
-        </div>
-    </div>    
+        <input id="name" pInputText formControlName="name" />
+        <p-message *ngIf="addUserForm.get('name')?.invalid && addUserForm.get('name')?.touched" 
+                   severity="error" text="Name is required."></p-message>
+    </div>
 
-    <div>
+    <div class="p-field">
         <label for="email">Email</label>
-        <input id="email" formControlName="email"/>
-        <div *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched">
-            <span *ngif="addUserForm.get('email').errors?.['required']">Email is required.</span>
-            <span *ngif="addUserForm.get('email').errors?.['email']">Email Format is invalid,Try again.</span>
-        </div>    
-    </div>    
+        <input id="email" pInputText formControlName="email" />
+        <p-message *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched">
+            <ng-container *ngIf="addUserForm.get('email')?.errors?.['required']">Email is required.</ng-container>
+            <ng-container *ngIf="addUserForm.get('email')?.errors?.['email']">Email Format is invalid, Try again.</ng-container>
+        </p-message>
+    </div>
 
-    <div>
+    <div class="p-field">
         <label for="password">Password</label>
-        <input id="password" formControlName="password"/>
-        <div *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched">
-          
-        </div>
-    </div>   
+        <input id="password" pInputText formControlName="password" />
+        <p-message *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched" 
+                   severity="error" text="Password is required."></p-message>
+    </div>
 
-    <button type="submit"[disabled]="addUserForm.invalid">ADD USER</button>
+    <button pButton type="submit" label="ADD USER" [disabled]="addUserForm.invalid"></button>
 </form>

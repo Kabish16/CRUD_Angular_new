@@ -3,13 +3,18 @@ import { FormBuilder , FormGroup, ReactiveFormsModule, Validators } from '@angul
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { CommonModule ,  } from '@angular/common';
+import { InputTextModule } from 'primeng/inputtext'; 
+import { ButtonModule } from 'primeng/button'; 
+import { MessageModule } from 'primeng/message'; 
+
+
 
 @Component({
   selector: 'app-add-user',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,InputTextModule, ButtonModule, MessageModule],
   templateUrl: './add-user.component.html',
-  styleUrl: './add-user.component.css'
+  styleUrls: ['./add-user.component.css']
 })
 
 export class AddUserComponent {

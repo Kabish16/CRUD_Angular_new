@@ -3,13 +3,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button'; 
+import { InputTextModule } from 'primeng/inputtext';
+
 
 @Component({
   selector: 'app-edit-user',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,ButtonModule, InputTextModule],
   templateUrl: './edit-user.component.html',
-  styleUrl: './edit-user.component.css'
+  styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
  editUserForm:FormGroup;

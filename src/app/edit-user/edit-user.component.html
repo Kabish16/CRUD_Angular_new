@@ -1,19 +1,23 @@
-<h2>Edit-User</h2>
-<form [formGroup]="editUserForm"(ngSubmit)="onSubmit()">
-    <div>
-        <label for="name">Name</label>
-        <input id="name" formControlName="name"/>
-        <div *ngIf="editUserForm.get('name')?.invalid && editUserForm.get('name')?.touched">            
+<h2>Edit User</h2>
+<form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" pInputText />
+            <div *ngIf="editUserForm.get('name')?.invalid && editUserForm.get('name')?.touched"></div>
         </div>
-    </div>    
 
-    <div>
-        <label for="email">Email</label>
-        <input id="email" formControlName="email"/>
-        <div *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched"> 
-            <span *ngIf="editUserForm.get('email')?.errors?.['required']"> Email is required.</span>
-            <span *ngIf="editUserForm.get('email')?.errors?.['email']"> Email is Invalid, Try Again.</span>           
+        <div class="p-field p-col">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" pInputText />
+            <div *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched">
+                <span *ngIf="editUserForm.get('email')?.errors?.['required']">Email is required.</span>
+                <span *ngIf="editUserForm.get('email')?.errors?.['email']">Email is Invalid, Try Again.</span>
+            </div>
         </div>
-    </div>    
-<button type="submit"[disabled]='editUserForm.invalid'> Confirm Edit</button>
+
+        <div class="p-field p-col">
+            <button type="submit" pButton label="Confirm Edit" [disabled]="editUserForm.invalid"></button>
+        </div>
+    </div>
 </form>

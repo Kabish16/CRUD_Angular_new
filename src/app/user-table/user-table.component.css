@@ -1,60 +1,26 @@
-
-table {
+:host ::ng-deep .p-table {
     width: 100%;
-    border-collapse: collapse;
     margin: 20px 0;
     font-size: 18px;
-    text-align: left;
 }
 
- 
-table, th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-}
-
-
-th {
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-
-tr {
-    border-bottom: 1px solid #ddd;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-
-td, th {
-    padding: 10px 20px;
-}
-
-#A{
-    color:white;
-    background-color: red;
-    cursor:pointer;
-    border-color: red;
-    border-radius: 8px;
+.p-button-success {
+    background-color: rgb(68, 180, 68);
     border: none;
+    border-radius: 8px;
     padding: 8px 16px;
     margin-right: 10px;
 }
 
-#B{
-    color: white;
-    background-color: rgb(68, 180, 68);
-    cursor: pointer;
-    border-color:rgb(68, 180, 68);
+.p-button-danger {
+    background-color: red;
+    border: none;
     border-radius: 8px;
-    border:none;
     padding: 8px 16px;
+    margin-right: 10px;
+}
+
+.p-button-primary {
+    padding: 18px 16px;
+    border-radius: 8px;
 }
